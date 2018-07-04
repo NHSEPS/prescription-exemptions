@@ -5,17 +5,12 @@
     "version": "1.0.0",
     "title": "Prescription Exemption Checking API"
   },
-  "host": "proxy.int.spine2.ncrs.nhs.uk", //TODO: confirm
-  "basePath": "/https://apps.nhsbsa.nhs.uk/Prescription-Exemption/1.0.0/", //TODO: add in proxy path here
-  "tags": [{
-    "name": "RTEC",
-    "description": "Exemptions"
-  }],
+  "host": "proxy.int.spine2.ncrs.nhs.uk",
+  "basePath": "/https://apps.nhsbsa.nhs.uk/Prescription-Exemption/1.0.0/",
   "paths": {
     "/search": {
       "post": {
-        "tags": ["RTEC"],
-        "summary": "Search for exemption certificates based on NHS Number, Surname, DoB and Postcode",
+        "summary": "Search for prescription exemptions based on NHS Number, Family Name, DoB & Postcode",
         "operationId": "searchUsingPOST",
         "consumes": ["application/json"],
         "produces": ["application/json"],
@@ -60,7 +55,7 @@
   "definitions": {
     "SearchRequest": {
       "type": "object",
-      "required": ["dob", "postcode", "familyname", "nhsNumber"],
+      "required": ["dob", "postcode", "surname", "nhsNumber"],
       "properties": {
         "dob": {
           "type": "string",
@@ -78,9 +73,9 @@
           "example": "NE32JH",
           "description": "Postcode"
         },
-        "familyname": {
+        "surname": {
           "type": "string",
-          "example": "Test",
+          "example": "Johnson",
           "description": "Family Name"
         }
       }
@@ -113,7 +108,8 @@
             "9012",
             "9013",
             "9014",
-            "9015"
+            "9015",
+            "9016"
           ]
         }
       }
