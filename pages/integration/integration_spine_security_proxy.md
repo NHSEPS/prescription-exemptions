@@ -13,21 +13,21 @@ The SSP is a forward HTTP proxy which will be used as a front end to control and
 
 ![Spine Security Proxy](images/integration/Spine Security Proxy Block Diagram.png)
 
-### Proxied Prescription Exemption Checks###
+### Proxied Prescription Exemption Checks ###
 
-For Phase 1 implementations FHIR endpoint location will be performed internally by the consumer system utilising the patient’s GP organisational identifier (for example, ODSCode as returned from a separate PDS lookup process) with the provider's server endpoint being resolved via Lightweight Directory Access Protocol (LDAP) queries to the [Spine Director Service (SDS)](integration_spine_directory_service.html).
+For Phase 1 implementations the API will be proxied by the Spine Security Proxy. Endpoint location for Spine-connected endpoints is normally carried out on Spine Directory Service. As in later phases the Prescription Exemption Checking Service will be wholly provided by the NHSBSA connecting systems should not look up endpoint details on SDS but retrieve from local configuration.
 
-{% include important.html content="All HTTP communications are expected to be secured using TLS mutual authentication (MA)." %}
+Systems must connect and authenticate with the proxy using TLS mutual authentication (MA) using spine system certificates.
 
 {% include important.html content="All N3 connected systems are expected to synchronise their local system clocks to the N3 Network Time Protocol (NTP) reference source." %}
 
-Once the provider server's endpoint is determined using the SDS, an HTTP request to the proxy server will be constructed as follows:
+An HTTP request to the proxy server will be suffixed with the API call, hence:
 
 ```http
-GET https:/[proxy_server]/https://[api_host]/Prescription-Exemptions/1.0.0/search
+POST https://proxy.int.spine2.ncrs.nhs.uk/https://testapps.nhsbsa.nhs.uk/Prescription-Exemption/1.0.0/
 ```
 
-A number of Spine specific HTTP headers also need to be populated with the intended Spine interactionID and system ASIDs.
+A number of Spine-specific HTTP headers also need to be populated with the intended Spine interactionID and system ASIDs.
 
 | Header               | Value |
 |----------------------|-------|

@@ -9,7 +9,7 @@ summary: "Details of the API security model and supported protocols"
 
 ## Secure connection negotiation ##
 
-Provider systems:
+API provider system:
 
 - SHALL only accept connections from the [Spine Security Proxy](integration_spine_security_proxy_implementation_guide.html) (SSP)
 
@@ -42,12 +42,12 @@ Provider systems SHOULD be tested for vulnerability to Denial of Service (DoS) a
 
 After consultation with the Infrastructure Security, Operational Security and Spine DDC teams, the following SSL protocol guidance have been agreed:
 
-- suppliers SHALL use `TLS1.2` with mutual authentication enabled for all message interactions
-- suppliers SHALL NOT use `TLS1.0`, `TLS1.1`, `SSLv2` and `SSLv3`
+- supplier SHALL use `TLS1.2` with mutual authentication enabled for all message interactions
+- supplier SHALL NOT use `TLS1.0`, `TLS1.1`, `SSLv2` and `SSLv3`
 
 ## Supported ciphers ##
 
-After consultation with the Infrastructure Security, Operational Security and Spine DDC teams the following SSL protocols SHALL be supported.
+The following SSL protocols SHALL be supported.
 
 {% include important.html content="The list of supported ciphers is ordered by preference (that is, the first item being the most preferred)." %}
 
@@ -73,13 +73,11 @@ Please see the [Tomcat Config HTTP SSL Support](https://tomcat.apache.org/tomcat
 
 ## Client certificates (TLS/mutual authentication (MA)) ##
 
-Provider and consumer systems SHALL only accept client certificates issued by the NHS Digital Deployment Issue and Resolution (DIR) team.
+API provider system SHALL only accept client certificates with a valid Spine 'chain of trust' (that is, linked to the Spine SubCA and RootCA).
 
-Provider and consumer systems SHALL only accept client certificates with a valid Spine 'chain of trust' (that is, linked to the Spine SubCA and RootCA).
+API provider system SHALL only accept client certificates which have not expired or been revoked.
 
-Provider and consumer systems SHALL only accept client certificates which have not expired or been revoked.
-
-Provider and consumer systems SHALL check the `FQDN` presented in the client certificate is that of the [Spine Security Proxy](integration_spine_security_proxy_implementation_guide.html) (SSP).
+API provider system SHALL check the `FQDN` presented in the client certificate is that of the [Spine Security Proxy](integration_spine_security_proxy_implementation_guide.html) (SSP).
 
 ## Response headers ##
 
@@ -89,15 +87,8 @@ Provider systems SHALL ensure no sensitive data leaks into a browser cache by se
 Cache-Control: no-store
 ```
 
-
 ## Authorisation of access to endpoints ##
 
 The primary purpose of the JWT claims is to [enable cross organisation provenance](integration_cross_organisation_audit_and_provenance.html#cross-organisation-audit--provenance-transport) information to be transmitted for auditing purposes.
 
-Provider systems MAY choose to use the value of the requested_scope claim to authorise access to APIs.
-
-## External policy documents ##
-
-| Name | Author | Version | Updated |
-| Approved Cryptographic Algorithms Good Practice Guidelines | NHS Digital | v4.0 | 13/07/2016 |
-| Warranted Environment Specification (WES) | NHS Digital | v1.0 | June 2015 |
+API provider system MAY choose to use the value of the requested_scope claim to authorise access to APIs.

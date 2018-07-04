@@ -10,7 +10,3 @@ topnav_dropdowns:
           external_url: https://developer.nhs.uk/library/systems/electronic-prescription-service-eps/
         - title: NHS Developer Network
           external_url: https://developer.nhs.uk
-#    - title: Capability Packs
-#      folderitems:
-#        - title: Capability One
-#          url: capability_one.html

@@ -11,7 +11,7 @@ Consumer systems SHALL undertake a three stage testing process:
 
 - [Technical accreditation](testing_api_provider_testing.html#technicalaccreditation) for Spine connectivity prerequisites
 - [Technical conformance](testing_api_provider_testing.html#technicalconformance) for functional testing of consumer API usage
-- [Solution assurance](testing_api_provider_testing.html#solutionassurance) for functional, non-functional, ready-for-operation and clinical safety
+- [Solution assurance](testing_api_provider_testing.html#solutionassurance) for functional, non-functional and  ready-for-operation
 
 ## Technical accreditation ##
 

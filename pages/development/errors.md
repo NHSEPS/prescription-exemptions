@@ -1,10 +1,10 @@
 ---
 title: Error Handling
 keywords: development deliverables
-tags: [engagement,development]
+tags: [development]
 sidebar: overview_sidebar
 permalink: errors.html
-summary: "Description of "
+summary: "Description of how service errors are represented"
 ---
 
 
