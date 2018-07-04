@@ -20,4 +20,4 @@ All InteractionIDs are expected to follow the following format `urn:nhs:names:se
 
 | Operation	| InteractionID	| HTTP verb	| Example URL pattern |
 |-----------|---------------|-----------|---------------------|
-| [search](http://www.google.com)    | `urn:nhs:names:services:prescription-exemptions:custom:operation:search:prescription-exemptions` | `POST` | `[base]/0.0.1/prescripton-exemptions/search` |
+| [search](api_operations_reference.html#operation/searchUsingPOST)    | `urn:nhs:names:services:prescription-exemptions:custom:operation:search:prescription-exemptions` | `POST` | `[base]/0.0.1/prescripton-exemptions/search` |

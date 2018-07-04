@@ -27,3 +27,7 @@ Clients must implement RBAC as defined in the National RBAC Database (NRD), and 
 | R1290	| Pharmacist                          | -             |
 
 Authorized activities are included in the Job Role or can be explicitly added to the User Role Profile by the Registration Authority (RA). Only activities added additionally to the Job Role are included in the SAML response from SSB.
+
+## Passing User Details to the Prescription Exemption Checking Service ##
+
+Although the Prescription Exemption Checking Service does not perform any user auth, details of the authenticated user must be included in calls to the Service in the HTTP authorisation header as per [Cross Organisation Audit and Provenance](cross_organisation_audit_and_provenance.html).

@@ -7,54 +7,11 @@ permalink: integration_cross_organisation_audit_and_provenance.html
 summary: "Overview of how audit and provenance data is passed to the Prescription Exemption Checking Service."
 ---
 
-## Governance ##
-
-Connecting systems SHALL ensure that access to confidential data, obtained through the API and subsequent storage must meet, as a minimum, the same requirements for information governance (IG), authentication and authorisation, and auditing as data manually entered into the patient record.
-
-## Audit trail ##
-
-Some connecting systems are commissioned under the GPSoC framework and so can be expected to follow the standard 'IG Requirements for GP Systems V4' requirements. For implementers that don't have access to the GPSoC Framework / 'IG Requirements for GP Systems V4' requirements then the following extract of requirements covers the main audit trail requirements:
-
-- systems SHALL record in an audit trail all access and data changes within the system as a result of API activity in the same way that internal access and changes are required to be recorded
-
-- systems SHALL ensure that all API transactions are recorded in an audit trail and that audit trails must be subject to the standard IG audit requirements as defined in 'IG Requirements for GP Systems V4' or as subsequently amended
-
-- systems SHALL ensure failed or rejected API transactions are recorded with the same detail as for successful API requests.
-
-Audit trail records shall include the following minimum information:
-
-- a record of the user identity - this is the User ID, Name, Role profile (including Role and Organisation, URP id when Smartcard authenticated) attribute values, obtained from the user’s session structure
-- a record of the identity of the authority – the person authorising the entry of or access to data (if different from the user)
-- the date and time on which the event occurred
-- details of the nature of the audited event and the identity of the associated data (for example, patient ID, message ID) of the audited event
-- a sequence number to protect against malicious attempts to subvert the audit trail by, for example, altering the system date
-- audit trail records should include details of the end-user device (or system) involved in the recorded activity
-
-Audit trails shall be enabled at all times and there shall be no means for users, or any other individuals, to disable any audit trail.
-
-{% include note.html content="Whilst some details (such as name, role) associated with individual users are likely to change over time, the display of user information must reflect the state of such information as it was at the time of the associated event (such as data entry)." %}
-
-## Provenance ##
-
-Connecting systems SHALL ensure that all additions, amendments or logical deletions to administrative data obtained via the API is clearly identified with information regarding the provenance of the data (such as, timestamp, details of consumer system, details of user (including role)), so it is clear which information has been generated through an API rather than through the provider system itself.
-
-Provider systems SHALL record the following provenance details of all API personal and sensitive personal data recorded within the system:
-
-- author details (identified through unique ID), including name and role
-- data entered by (if different from author)
-- date and time (to the second) entered
-- originating organisation
-- API interaction
-
-## Patient demographic cross-checking ##
-
-Connecting systems SHALL always perform a patient demographic check as part of the use of a GP Connect capability to ensure that the patient for whom the information has been provided is the same patient for whom the request was made, and make clear to the end user any discrepancies.
-
 ## Cross organisation audit and provenance transport ##
 
 ### Bearer token ###
 
-Requesting systems SHALL provide audit and provenance details in the HTTP authorisation header as an OAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"}) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
+Connecting systems SHALL provide audit and provenance details in the HTTP authorisation header as an OAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"}) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
 
 An example such an HTTP header is given below:
 
