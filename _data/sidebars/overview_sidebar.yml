@@ -16,7 +16,7 @@ entries:
       url: /key_concepts.html
       output: web
     - title: Glossary
-      url: /overview_glossary.html
+      url: /glossary.html
       output: web
 
 #  - title: Explore
