@@ -20,7 +20,7 @@
   "host": "proxy.int.spine2.ncrs.nhs.uk",
   "basePath": "/https://dev.assured.nhsbsa.nhs.uk/rtec-api-gateway",
   "tags": [{
-    "name": "Exemptione",
+    "name": "Exemptions",
     "description": "Prescription Exemptions"
   }],
   "schemes": ["https"],
