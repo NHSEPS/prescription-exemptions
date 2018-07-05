@@ -2,7 +2,7 @@
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Prescription Exemption Checking Service Interface
+topnav_title: Prescription Exemption Checking Service API
 # this appears on the top navigation bar next to the home button
 
 site_title: Prescription Exemption Checking
@@ -96,7 +96,7 @@ description: "Prescription Exemption API Documentation"
 sitemap: true
 
 # needed for sitemap.xml file only
-url: https://nhsconnect.github.io/spine-eps-tracker
+url: https://nhsconnect.github.io/prescription-exemptions
 
 repository:
 
