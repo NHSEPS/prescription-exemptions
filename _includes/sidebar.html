@@ -3,7 +3,7 @@
 
 <ul id="mysidebar" class="nav">
     <img src="{{ "images/logo.png" }}" alt="NHS Digital/NHSBSA Logo" width="220" />
-    <li class="sidebarTitle">version{{ gpconnectVersion }}</li>
+    <li class="sidebarTitle">Version: {{ gpconnectVersion }}</li>
 	<li class="sidebarSection">{{sidebar[0].product}}</li>
 
     {% if showbackbutton == true %}
@@ -15,7 +15,7 @@
     {% for entry in sidebar %}
     {% for folder in entry.folders %}
     {% if folder.output contains "web" %}
-    <li> 
+    <li>
         <a href="#">{{ folder.title }}</a>
         <ul>
             {% for folderitem in folder.folderitems %}
