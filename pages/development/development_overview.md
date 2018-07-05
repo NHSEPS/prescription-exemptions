@@ -25,9 +25,9 @@ The json response will contain a simple object with the following properties. No
 
 | Property	|	Description															|	Data type					| Example													|		
 +-----------+-----------------------------------------+-------------------+---------------------------------|
-|	`expiry`	|	**Expiry date of the exemption** until which the response can be cached	|	Date	| 2019-01-01	|
-|	`message`	| **Exemption description or error** which can be displayed to the user		| String	| gets income support (IS) - confirmed by source |
-|	`type`		|	**Exemption type** which should be returned in the reimbursement claim for EPS R2 prescriptions	|	String	|	9014	|
+|	`expiry`	|	**Expiry date of the exemption** until which the response can be cached	|	Date	| `2019-01-01`	|
+|	`message`	| **Exemption description or error** which can be displayed to the user		| String	| `Exemption has been found` |
+|	`type`		|	**Exemption type** which should be returned in the reimbursement claim for EPS R2 prescriptions	|	String	|	`9014`	|
 
 
 ### Error Handling ###
