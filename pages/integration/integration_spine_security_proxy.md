@@ -24,7 +24,7 @@ Systems must connect and authenticate with the proxy using TLS mutual authentica
 An HTTP request to the proxy server will be suffixed with the API call, hence:
 
 ```http
-POST https://proxy.int.spine2.ncrs.nhs.uk/https://testapps.nhsbsa.nhs.uk/Prescription-Exemption/1.0.0/
+POST https://proxy.int.spine2.ncrs.nhs.uk/https://dev.assured.nhsbsa.nhs.uk/rtec-api-gateway/v1.0.0/search
 ```
 
 A number of Spine-specific HTTP headers also need to be populated with the intended Spine interactionID and system ASIDs.

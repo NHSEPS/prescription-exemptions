@@ -12,9 +12,6 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
-    - title: Key Concepts
-      url: /key_concepts.html
-      output: web
     - title: Glossary
       url: /glossary.html
       output: web
