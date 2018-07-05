@@ -33,7 +33,7 @@ entries:
       url: /user_auth.html
       output: web
     - title: System Authentication
-      url: /system_authentication.html
+      url: /system_auth.html
       output: web
     - title: Errors
       url: /errors.html

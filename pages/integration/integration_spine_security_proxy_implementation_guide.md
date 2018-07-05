@@ -13,7 +13,7 @@ Technical overview of the operation of the SSP.
 
 ### Purpose ###
 
-This document is intended for use by software developers looking to build a conformant GP Connect FoT API interfaces or consumer application utilising the SSP.
+This document is intended for use by software developers looking to build a system connecting to the Prescription Exemption Checking Service for Phase 1 using the SSP.
 
 ### Notational conventions ###
 
@@ -21,7 +21,7 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 
 ## Introduction ##
 
-The SSP is a forward proxy which will be used as a front-end to control and protect access to GP principal IT systems that will be exposing FHIR based RESTful APIs as defined by the GP Connect programme.  It will provide a single security point for both authentication and authorisation for consumer and provider systems. Additional responsibilities include auditing of all requests and transaction logging for performance and commercial remuneration purposes. In the first instance the proxy will be made available on the N3 network, but it is envisaged that in a later phase of the GP Connect programme access via the public internet will also be supported.
+The SSP is a forward proxy which will be used as a front-end to control and protect access to  RESTful APIs, designed initially to proxy the GPConnect APIs.  It will provide a single security point for both authentication and authorisation for consumer and provider systems. Additional responsibilities include auditing of all requests and transaction logging for performance and commercial remuneration purposes. Through Phase 1 the proxy will be made available in test environments only.
 
 ## Background ##
 
@@ -46,7 +46,7 @@ At a high-level the proxy operates as a content agnostic mediator allowing autho
 | Proxy | HTTPS/TLS Mutual Authentication (MA) enabled proxy with auditing. |
 | Provider | Any system which is capable of servicing HTTPS requests from third-party consumer systems. |
 
-In the First of Type (FoT) instantiation of this system architecture provider systems will be GP principal IT systems from vendors such as (EMIS, TPP, INPS and Microtest), consumers are expected to be a mix of GP principal IT systems and other IT systems. 
+In the First of Type (FoT) instantiation of this system architecture provider systems will be GP principal IT systems from vendors such as (EMIS, TPP, INPS and Microtest), consumers are expected to be a mix of GP principal IT systems and other IT systems.
 
 As a guiding design principle, the Spine Security Proxy (SSP) SHALL NOT impose any interoperability barriers<sup>1</sup> which would impede FHIR compliant client libraries/applications from communicating with FHIR compliant back-end API services. However, it MAY block consumer communications on security grounds (i.e. a consumer attempting to access a provider for which it doesn’t have permission).
 
@@ -143,8 +143,8 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 <sup>1</sup> this look-up is to ensure the NHS Number is of good quality in the consumer system and is not required prior to each API operation.
 
-<sup>2</sup> The content of the HTTP headers is not to be used for internal processing message routing within provider systems. 
-  
+<sup>2</sup> The content of the HTTP headers is not to be used for internal processing message routing within provider systems.
+
 <sup>3</sup> a table of `InteractionIDs` for each RESTful API can be found in the [Development - FHIR API Guidance - Operation Guidance](development_fhir_operation_guidance.html) page.
 
 <sup>4</sup> an example of a valid JSON Web Token (JWT) for the purposes of GP Connect can be found in the [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html) guidance.
@@ -182,7 +182,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 {% include tip.html content="Non-functional testing by the Spine team has indicated a fairly constant 15ms average latency traversing the Spine Security Proxy (SSP) regardless of payload size." %}
 
 ### Provider ###
- 
+
 - PDS trace/validation of NHS number.<sup>1</sup>
 	- Exposed patient records are expected to contain only curated NHS numbers.
 - Provides PKI server credentials to allow verification of provider system.
@@ -190,7 +190,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 - Processing of FHIR conformant API requests and generation of FHIR conformant responses.<sup>2</sup>
 - Where a requested FHIR Operation or Resource has not been implemented, the provider SHOULD return a [501 HTTP Status code](development_fhir_error_handling_guidance.html#internal-server-errors)
 - Publish endpoints to SDS (or future endpoint lookup service). The published endpoint shall be the FHIR Base URL. The FHIR base URL SHALL contain an identifier which uniquely identifies a GP practice at the level of its ODS code.
-- Published endpoints SHALL include the FHIR Version number. The FHIR version number returned by the FHIR server endpoint conformance statement SHALL match the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used. 
+- Published endpoints SHALL include the FHIR Version number. The FHIR version number returned by the FHIR server endpoint conformance statement SHALL match the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used.
 - Error response generation in line with FHIR and HTTP conventions including the return of transient HTTP error codes when appropriate (i.e. due to the provider being down or busy).
 	- `503` Service Unavailable
 
@@ -207,7 +207,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 - End-to-End encryption of all traffic between systems.
 - Transparent retrieval of HTTPS resources from provider systems.
 - Performant retrieval of HTTPS resources.
-- Audit & transaction logging to existing Spine centralised audit logging infrastructure (i.e. Splunk). 
+- Audit & transaction logging to existing Spine centralised audit logging infrastructure (i.e. Splunk).
 - Reporting of volumetric and performance statistics to allow activity based remuneration back to the supplying vendor of the provider system(s).
 
 ### Out of Scope for FoT ###
