@@ -22,18 +22,20 @@ The Prescription Exemption Checking Service API uses standard HTTP response code
 | 401           | Unauthorised                      |
 | 404           | Exemption has not been found      |
 | 500           | Unexpected error happened         |
+| 501           | Not implemented
 | 503           | Service unavailable               |
 
 ### Error Messages ###
-Further detail of the error is reported in the `message` property in most cases.
+Further detail of the error is reported in the `message` property in several cases.
 
 | Status Code   | Message                           | Example                         |
 |:-------------:|-----------------------------------|---------------------------------|
-| 200           | {Text of exemption type}          | `{"message": "gets income support (IS) - confirmed by source","type": "9006"}` |
-| 400           | Bad request - {additional information} | `{"message": "Bad request - Please provide a valid nhsNumber "}`|
+| 200           | Exemption has been found         | `{"message":"Exemption has been found","type":"9006","expiry":"2019-01-01"}` |
+| 400           | Please provide a valid request or Please provide a valid {field list} | `{"message": "Please provide a valid postcode","type":null,"expiry":null}`|
 | 401           | *No response object returned*     |                                 |
-| 404           | Exemption has not been found      | `{"message": "Exemption has not been found"}`|
+| 404           | Exemption has not been found      | `{"message": "Exemption has not been found","type":null,"expiry":null}`|
 | 500           | *No response object returned*     |                                 |
+| 501           | *No response object returned*     |                                 |
 | 503           | *No response object returned*     |                                 |
 
 A complete errorbase will be provided in a later release.
