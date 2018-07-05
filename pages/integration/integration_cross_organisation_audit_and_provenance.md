@@ -71,11 +71,11 @@ The payload section of the JWT shall be populated as follows:
 |-------|----------|-------------|-------------|------------------|
 | iss | R | Requesting system ASID | No | Accredited System ID |
 | sub | R | SDS user ID ID for the user on whose behalf this request is being made. Matches `requesting_practitioner` | No | Yes |
-| aud | R | Requested resource URI | `http://[spine_proxy_url]/http://[pecs_service_url]/Prescription-Exemption/1.0.0/search` | No |
+| aud | R | Requested resource URI | `http://[spine_proxy_url]/http://[pecs_service_host]/rtec-api-gateway/1.0.0/search` | No |
 | exp | R | Expiration time integer after which this authorisation MUST be considered invalid. | No | (now() + 5 minutes) UTC time in seconds |
 | iat | R | The UTC time the JWT was created by the requesting system | No | now() UTC time in seconds |
 | reason_for_request | R | Purpose for which access is being requested | `directcare` | No |
-| requested_scope | R | Data being requested | `Prescription-Exemption/1.0.0/search` | No |
+| requested_scope | R | Data being requested | `/rtec-api-gateway/1.0.0/search` | No |
 | requesting_device | R | Device details and/or system url making the request | No | Accredited System ID |
 | requesting_organization | R | ODS code for the organisation making the request | No | ODS code |
 | requesting_practitioner | R | SDS user ID for the user making the request | No | SDS user ID |
