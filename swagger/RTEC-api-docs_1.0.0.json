@@ -20,14 +20,14 @@
   "host": "proxy.int.spine2.ncrs.nhs.uk",
   "basePath": "/https://dev.assured.nhsbsa.nhs.uk/rtec-api-gateway",
   "tags": [{
-    "name": "RTEC",
-    "description": "Exemptions"
+    "name": "Exemptione",
+    "description": "Prescription Exemptions"
   }],
   "schemes": ["https"],
   "paths": {
     "/v1.0.0/search": {
       "post": {
-        "tags": ["RTEC"],
+        "tags": ["Exemptions"],
         "security":[{"Bearer":[]}],
         "summary": "Search for exemption certificates based on NHS Number, Surname, Date of Birth and Postcode",
         "operationId": "searchUsingPOST",

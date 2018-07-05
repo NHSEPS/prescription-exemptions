@@ -10,7 +10,7 @@ The Prescription Exemption Checking Service exposes a single search operation to
 
 ## Interactions ##
 
-All InteractionIDs are expected to follow the following format `urn:nhs:names:services:[program]:[standard]:[mechanism]:[operation]:[subject]`. As such for the Prescripiton Exemption Checking Service the following InteractionID is used:
+All InteractionIDs are expected to follow the following format `urn:nhs:names:services:[program]:[standard]:[mechanism]:[operation]:[subject]`. As such for the Prescription Exemption Checking Service the following InteractionID is used:
 
 - Program = `prescription-exemptions`
 - Standard = `custom`
@@ -20,4 +20,4 @@ All InteractionIDs are expected to follow the following format `urn:nhs:names:se
 
 | Operation	| InteractionID	| HTTP verb	| Example URL pattern |
 |-----------|---------------|-----------|---------------------|
-| [search](api_operations_reference.html#operation/searchUsingPOST)    | `urn:nhs:names:services:prescription-exemptions:custom:operation:search:prescription-exemptions` | `POST` | `[base]/0.0.1/prescription-exemptions/search` |
+| [search](api_operations_reference.html#operation/searchUsingPOST)    | `urn:nhs:names:services:prescription-exemptions:custom:operation:search:prescription-exemptions` | `POST` | `[base]/v1.0.0/search​` |
