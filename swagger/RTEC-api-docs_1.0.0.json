@@ -28,7 +28,7 @@
     "/v1.0.0/search": {
       "post": {
         "tags": ["RTEC"],
-        "security":{"Bearer":[]},
+        "security":[{"Bearer":[]}],
         "summary": "Search for exemption certificates based on NHS Number, Surname, Date of Birth and Postcode",
         "operationId": "searchUsingPOST",
         "consumes": ["application/json"],
