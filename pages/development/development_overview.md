@@ -18,7 +18,7 @@ All requests are HTTP POSTs of a json object with the following properties:
 |	`dob`				|	**Date of Birth** of the patient				|	Date				| 2010-01-01										|
 |	`nhsNumber`	| **NHS Number** which must be traced and verified with Spine Demographics | String	| 9434765919 |
 |	`postcode`	|	**Post Code** of patient's usual address	|	String			|	NE32JH													|
-|	`familyName`|	**Family Name** from patient's usual name	|	String			|	Parker													|
+|	`surname`|	**Family Name** from patient's usual name	|	String			|	Parker													|
 
 ### Response ###
 The json response will contain a simple object with the following properties. Note that these properties are not ordered so may appear in any order.
