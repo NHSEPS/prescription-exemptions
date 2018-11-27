@@ -11,6 +11,17 @@
 
 window.onload = function() {
 
+  const DisableTryItOutPlugin = function() {
+    return {
+      statePlugins: {
+        spec: {
+          wrapSelectors: {
+            allowTryItOutFor: () => () => false
+          }
+        }
+      }
+    }
+  }
   // Build a system
   const ui = SwaggerUIBundle({
     url: "{{page.swagger}}",
@@ -22,7 +33,8 @@ window.onload = function() {
       SwaggerUIBundle.presets.apis
     ],
     plugins: [
-      SwaggerUIBundle.plugins.DownloadUrl
+      SwaggerUIBundle.plugins.DownloadUrl,
+      DisableTryItOutPlugin
     ]
   })
 
