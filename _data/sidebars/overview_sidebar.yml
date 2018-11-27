@@ -40,7 +40,7 @@ entries:
   - title: Test
     output: web
     folderitems:
-    - title: Test Date
+    - title: Test Data
       url: /testing_data.html
       output: web
     - title: Test Deliverables
