@@ -40,6 +40,9 @@ entries:
   - title: Test
     output: web
     folderitems:
+    - title: Acceptance Criteria
+      url: /testing_acceptance_criteria.html
+      output: web
     - title: Test Data
       url: /testing_data.html
       output: web
