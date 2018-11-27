@@ -37,3 +37,15 @@ entries:
     - title: Integrating EPS Messaging
       url: /integrating_messaging.html
       output: web
+  - title: Test
+    output: web
+    folderitems:
+    - title: Test Date
+      url: /testing_data.html
+      output: web
+    - title: Test Deliverables
+      url: /testing_deliverables.html
+      output: web
+    - title: Test Environments
+      url: /testing_environments.html
+      output: web
