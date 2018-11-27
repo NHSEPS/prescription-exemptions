@@ -52,7 +52,9 @@
             );
     </script>
     {% endif %}
-
+    {% if page.swagger %}
+    {% include custom/swaggerui.html %}
+    {% endif %}
 </head>
 <body>
 {% include topnav.html %}
