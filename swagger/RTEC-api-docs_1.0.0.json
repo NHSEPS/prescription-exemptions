@@ -17,15 +17,15 @@
       "in":"header"
     }
   },
-  "host": "proxy.int.spine2.ncrs.nhs.uk",
-  "basePath": "/https://dev.assured.nhsbsa.nhs.uk/rtec-api-gateway",
+  "host": "dev.assured.nhsbsa.nhs.uk",
+  "basePath": "/rtec-api-gateway/v1.0.0",
   "tags": [{
     "name": "Exemptions",
     "description": "Prescription Exemptions"
   }],
   "schemes": ["https"],
   "paths": {
-    "/v1.0.0/search": {
+    "/search": {
       "post": {
         "tags": ["Exemptions"],
         "security":[{"Bearer":[]}],
@@ -44,45 +44,15 @@
         },
         {
           "in": "header",
-          "name": "Ssp-TraceID",
-          "description": "Consumer's TraceID (i.e. GUID/UUID). This is reflected back in the response allowing queries to be traced throughout the system",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "uuid",
-            "example":"69464636-5CC0-4C99-A041-85B664281754"
-          }
-        },
-        {
-          "in": "header",
           "name": "Ssp-From",
-          "description": "Dispensing System's ASID, which needs to match the ASID held against this interaction/operation on SDS",
-          "required": true,
+          "description": "Dispensing System's ASID",
+          "required": false,
           "schema": {
             "type": "string",
             "example":"226732150041"
           }
         },
-        {
-          "in": "header",
-          "name": "Ssp-To",
-          "description": "NHSBSA's ASID, which needs to match the ASID held against this interaction/operation on SDS and will be static dependant on environment",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "example":"468894349017"
-          }
-        },
-        {
-          "in": "header",
-          "name": "Ssp-InteractionID",
-          "description": "The interactionID of the operation, which the requesting system needs to have registered on SDS",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "example":"urn:nhs:names:services:prescription-exemptions:custom:operation:search:prescription-exemptions"
-          }
-        }],
+        ],
         "responses": {
           "200": {
             "description": "Exemption has been found",
@@ -118,8 +88,13 @@
   "definitions": {
     "SearchRequest": {
       "type": "object",
-      "required": ["dob", "nhsNumber", "postcode", "surname"],
+      "required": ["prescriptionId","dob", "nhsNumber", "postcode", "surname"],
       "properties": {
+        "prescriptionId": {
+          "type": "string",
+          "example": "471BC8-P83027-34B75X",
+          "description": "EPS R2 prescription ID"
+        },
         "dob": {
           "type": "string",
           "format": "date",
@@ -146,12 +121,6 @@
     "SearchResponse": {
       "type": "object",
       "properties": {
-        "expiry": {
-          "type": "string",
-          "format": "date",
-          "example": "2019-06-14",
-          "description": "Expiry date"
-        },
         "message": {
           "type": "string",
           "example": "Exemption has been found",
@@ -160,8 +129,7 @@
         "type": {
           "type": "string",
           "example": "9005",
-          "description": "Exemption type",
-          "enum": ["9003", "9005", "9006", "9007", "9008", "9009", "9011", "9012", "9013", "9014", "9015", "9016"]
+          "description": "Exemption type"
         }
       }
     }

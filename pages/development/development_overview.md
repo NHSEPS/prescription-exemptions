@@ -19,15 +19,15 @@ All requests are HTTP POSTs of a json object with the following properties:
 |	`nhsNumber`	| **NHS Number** which must be traced and verified with Spine Demographics | String	| 9434765919 |
 |	`postcode`	|	**Post Code** of patient's usual address	|	String			|	NE32JH													|
 |	`surname`|	**Family Name** from patient's usual name	|	String			|	Parker													|
+|`prescriptionId` | EPS R2 **Prescription ID** from the prescription | String | 471BC8-P83027-34B75X
 
 ### Response ###
 The json response will contain a simple object with the following properties. Note that these properties are not ordered so may appear in any order.
 
 | Property	|	Description															|	Data type					| Example													|		
 +-----------+-----------------------------------------+-------------------+---------------------------------|
-|	`expiry`	|	**Expiry date of the exemption** until which the response can be cached	|	Date	| `2019-01-01`	|
 |	`message`	| **Exemption description or error** which can be displayed to the user		| String	| `Exemption has been found` |
-|	`type`		|	**Exemption type** which should be returned in the reimbursement claim for EPS R2 prescriptions	|	String	|	`9014`	|
+|	`type`		|	**Exemption type** which should be returned in the reimbursement claim for EPS R2 prescriptions	|	String	|	`9005`	|
 
 
 ### Error Handling ###
@@ -35,16 +35,8 @@ The Prescription Exemption Checking Service API uses standard HTTP response code
 
 ### Security ###
 
-Security of the service follows established mechanisms for synchronous queries to Spine.
-
 #### User Authentication & Authorization ####
 Systems are required to be implement Role-Based Access Control using the Spine Security Broker. The details of the user and organisation are included in an OAuth Bearer Token carried in HTTP headers.
 
 #### Endpoint Authentication ####
-Systems are required to be registered Spine endpoints and will need to register the interaction ID for their accredited system. They will have a certificate issued and communications are secured via TLS mutual authentication. Thus only authorised external systems will have access to this service.
-
-This will be enforced by checking that:
-
-* the certificate used to connect to the service is current and valid.
-* the Accredited System ID (ASID) of the sender matches that of the certificate.
-* the ASID of the sender is included in the list of allowed ASIDs for this interaction.
+No client authentication is required, and systems are not required to use a client certificate when connecting to the service. Clients must install the root and intermediary Certificate Authorities used by the service, and must validate the server certificate used by the service, ensuring that it matches the hostname of the service. Systems should be registered Spine endpoints in order to provide their ASID in the request header.

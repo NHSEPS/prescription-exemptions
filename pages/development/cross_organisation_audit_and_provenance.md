@@ -1,9 +1,9 @@
 ---
 title: Cross organisation audit and provenance
-keywords: spine, ssp, integration, audit, provenance
+keywords: spine, integration, audit, provenance
 tags: [integration]
 sidebar: overview_sidebar
-permalink: integration_cross_organisation_audit_and_provenance.html
+permalink: cross_organisation_audit_and_provenance.html
 summary: "Overview of how audit and provenance data is passed to the Prescription Exemption Checking Service."
 ---
 
@@ -55,7 +55,7 @@ Requesting systems SHALL generate an empty signature.
 The final output is three Base64url encoded strings separated by dots (note - there is some canonicalisation done to the JSON before it is Base64url encoded, which the JWT code libraries will do for you).
 
 ```shell
-eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0LmV1LXdlc3QtMS5jb21wdXRlLmFtYXpvbmF3cy5jb20vIy9zZWFyY2giLCJzdWIiOiIxIiwiYXVkIjoiaHR0cHM6Ly9hdXRob3JpemUuZmhpci5uaHMubmV0L3Rva2VuIiwiZXhwIjoxNDgxMjUyMjc1LCJpYXQiOjE0ODA5NTIyNzUsInJlYXNvbl9mb3JfcmVxdWVzdCI6ImRpcmVjdGNhcmUiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6IlBhdGllbnQiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL25ocy1udW1iZXIiLCJ2YWx1ZSI6IjkwMDAwMDAwMzMifV19LCJyZXF1ZXN0ZWRfc2NvcGUiOiJwYXRpZW50LyoucmVhZCIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IldlYiBJbnRlcmZhY2UiLCJ2YWx1ZSI6IkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIn1dLCJtb2RlbCI6IkRlbW9uc3RyYXRvciIsInZlcnNpb24iOiIxLjAifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cDovL2ZoaXIubmhzLm5ldC9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IltPRFNDb2RlXSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIn0sInJlcXVlc3RpbmdfcHJhY3RpdGlvbmVyIjp7InJlc291cmNlVHlwZSI6IlByYWN0aXRpb25lciIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvc2RzLXVzZXItaWQiLCJ2YWx1ZSI6IkcxMzU3OTEzNSJ9LHsic3lzdGVtIjoibG9jYWxTeXN0ZW0iLCJ2YWx1ZSI6IjEifV0sIm5hbWUiOnsiZmFtaWx5IjpbIkRlbW9uc3RyYXRvciJdLCJnaXZlbiI6WyJHUENvbm5lY3QiXSwicHJlZml4IjpbIk1yIl19fX0.
+eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJzdWIiOiI1MDQzMDk3MzEwMTciLCJhdWQiOiJodHRwczovL3N0Zy5uaHNkYXBpLmFzc3VyZWQubmhzYnNhLm5ocy51ay9ydGVjLWFwaS1nYXRld2F5L3YxLjAuMC9zZWFyY2giLCJyZXF1ZXN0aW5nX2RldmljZSI6IjIwMDAwMDAwMDk0NiIsInJlcXVlc3RpbmdfcHJhY3RpdGlvbmVyIjoiNTA0MzA5NzMxMDE3IiwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOiJBMUIyQyIsImlzcyI6IjIwMDAwMDAwMDk0NiIsImV4cCI6MTU0Mjk5NTk5MSwiaWF0IjoxNTQyOTk1NjkxLCJyZWFzb25fZm9yX3JlcXVlc3QiOiJkaXJlY3RjYXJlIiwicmVxdWVzdGVkX3Njb3BlIjoiL3J0ZWMtYXBpLWdhdGV3YXkvdjEuMC4wL3NlYXJjaCJ9.
 ```
 
 **Note:**
@@ -71,7 +71,7 @@ The payload section of the JWT shall be populated as follows:
 |-------|----------|-------------|-------------|------------------|
 | iss | R | Requesting system ASID | No | Accredited System ID |
 | sub | R | SDS user ID ID for the user on whose behalf this request is being made. Matches `requesting_practitioner` | No | Yes |
-| aud | R | Requested resource URI | `http://[spine_proxy_url]/http://[pecs_service_host]/rtec-api-gateway/1.0.0/search` | No |
+| aud | R | Requested resource URI | `http://[pecs_service_host]/rtec-api-gateway/1.0.0/search` | No |
 | exp | R | Expiration time integer after which this authorisation MUST be considered invalid. | No | (now() + 5 minutes) UTC time in seconds |
 | iat | R | The UTC time the JWT was created by the requesting system | No | now() UTC time in seconds |
 | reason_for_request | R | Purpose for which access is being requested | `directcare` | No |
@@ -105,7 +105,7 @@ In a future OAuth2 implementation, the ISS claim will contain the URL of the OAu
 {
   "iss": "200000010371",
   "sub": "313175813564",
-  "aud": "https://proxy.int.spine2.ncrs.nhs.uk/https://apps.nhsbsa.nhs.uk/Prescription-Exemption/1.0.0/search",
+  "aud": "https://apps.nhsbsa.nhs.uk/Prescription-Exemption/1.0.0/search",
   "exp": 1469436987,
   "iat": 1469436687,
   "reason_for_request": "directcare",
@@ -116,15 +116,28 @@ In a future OAuth2 implementation, the ISS claim will contain the URL of the OAu
 }
 ```
 
-{% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) NHS Digital hasn't committed to using the SMART on FHIR specification." %}
-
 ## Example code ##
 
-### C# ###
+### Java ###
 
-{% include tip.html content="The following code snippet utilises the [Microsoft Identity Model JWT Token NuGet Package](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt/) for creating, serializing and validating JWT tokens." %}
-
-```C#
-TODO
+```Java
+  private String jwtForOds(String ods) {
+		try {
+			return com.auth0.jwt.JWT.create()
+			        .withClaim("iss", FROM_ASID)
+			        .withClaim("sub", USER_ID)
+			        .withClaim("aud", ENDPOINT_URL)
+			        .withClaim("iat", new Date())
+			        .withClaim("exp", Date.from(Instant.now().plus(5, ChronoUnit.MINUTES)))
+			        .withClaim("reason_for_request", "directcare")
+			        .withClaim("requested_scope", new URL(ENDPOINT_URL).getPath())
+			        .withClaim("requesting_device", FROM_ASID)
+			        .withClaim(ODS_CODE_CLAIM, ods)
+			        .withClaim("requesting_practitioner", USER_ID)
+			        .sign(Algorithm.none());
+		} catch (Exception e) {
+			return null;
+		}
+	}
 
 ```

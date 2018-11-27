@@ -30,8 +30,8 @@ Further detail of the error is reported in the `message` property in several cas
 
 | Status Code   | Message                           | Example                         |
 |:-------------:|-----------------------------------|---------------------------------|
-| 200           | Exemption has been found         | `{"message":"Exemption has been found","type":"9006","expiry":"2019-01-01"}` |
-| 400           | Please provide a valid request or Please provide a valid {field list} | `{"message": "Please provide a valid postcode","type":null,"expiry":null}`|
+| 200           | Exemption has been found         | `{"message":"Exemption has been found","type":"9006"}` |
+| 400           | Please provide a valid request or Please provide a valid {field list} | `{"message": "Please provide a valid postcode","type":null}`|
 | 401           | *No response object returned*     |                                 |
 | 404           | Exemption has not been found      | `{"message": "Exemption has not been found","type":null,"expiry":null}`|
 | 500           | *No response object returned*     |                                 |

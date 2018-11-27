@@ -7,7 +7,7 @@ permalink: integrating_messaging.html
 summary: How to integrate information from the Prescription Exemption Checking Service API with EPS Prescription messaging
 ---
 
-Once an exemption has been confirmed by a prescription exemption check this confirmation needs to be reflected in the reimbursement claim message for EPS prescriptions. This is done using an extended version of the  *PrescriptionChargeExemption* vocabulary, which includes the values which may be returned by a prescription exemption check. Where the patient wishes to claim a different exemption not confirmed by the prescription exemption checking service, then the appropriate value not confirmed by source must be included in the claim message.
+Once an exemption has been confirmed by a prescription exemption check this confirmation needs to be reflected in the reimbursement claim message for EPS prescriptions. This is done using an extended version of the  *PrescriptionChargeExemption* vocabulary, which includes values which may be returned by a prescription exemption check. Where the patient wishes to claim a different exemption not confirmed by the prescription exemption checking service, then the appropriate value not confirmed by source must be included in the claim message.
 
 ## *PrescriptionChargeExemption* vocabulary
 
@@ -34,18 +34,8 @@ The following vocabulary must be used in EPS claim messages.
 | `0012`	| gets income based Job Seeker's Allowance (JSA (IB))	 | |
 | `0013`	| is entitled to, or named on a VALID NHS tax credit exemption certificate	 |
 | `0015` | Patient does not need to pay the prescription charge	| This allows the exemption status to be recorded without actually stating the reason for the exemption.|
-| `9003`	| is 16, 17 or 18 and in full-time education - confirmed by source	 | |
 | `9005`	| has a valid maternity exemption certificate - confirmed by source	 | |
-| `9006`	| has a valid medical exemption certificate - confirmed by source	 | |
-| `9007`	| has a valid prescription pre-payment certificate - confirmed by source	 | |
-| `9008`	| has a War Pension exemption certificate - confirmed by source	 | |
-| `9009`	| is named on a current HC2 charges certificate - confirmed by source	 | |
-| `9011`	| gets income support (IS) - confirmed by source	 | |
-| `9012`	| gets income based Job Seeker's Allowance (JSA (IB)) - confirmed by source	 | |
-| `9013`	| is entitled to, or named on a VALID NHS tax credit exemption certificate - confirmed by source	 | |
-| `9014`	| has a partner who gets Pension Credit Guarantee Credit (PGCC) - confirmed by source	 | |
-| `9015` | Patient does not need to pay the prescription charge - confirmed by source	| This allows the exemption status to be confirmed without actually stating the reason for the exemption |
-| `9016` | gets Universal Credit (and meets eligibility criteria) | |
+| Any other value | Patient does not need to pay the prescription charge - confirmed by source	| This allows the exemption status to be confirmed without actually stating the reason for the exemption |
 
 
 ## Exemption Type in the EPS Claim message ##
