@@ -10,7 +10,7 @@ summary: "Details of test resources made available to support testing of Prescri
 
 Evidence to demonstrate meeting these requirements is approved by NHS Digital Solution Assurance compliance team. A Release Traceability Matrix (RTM) derived from functional requirements is recommended for this.
 
-## Test Evidence - Functional Requirements##
+## Test Evidence - Functional Requirements ##
 
 There are a set of acceptance criteria which should permit automated testing of the integration.  Evidence of successful test shall be provided to demonstrate compliance.
 
