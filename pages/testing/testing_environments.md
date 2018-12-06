@@ -17,7 +17,15 @@ To support the technical accreditation of integrating systems.
 
 | Host                                        | Port  | Endpoint                          |
 | --------------------------------------------| ----- | --------------------------------- |
-| stg.nhsdapi.assured.nhsbsa.nhs.uk           | 443   | /rtec-api-gateway/v1.0.0/search   |
+| stg.nhsdapi.assured.nhsbsa.nhs.uk           | 443   | /rtec-api-gateway/search   |
+
+### Mock ###
+
+To support the initial development.
+
+| Host                                        | Port  | Endpoint                          |
+| --------------------------------------------| ----- | --------------------------------- |
+| rtec-mock.eps.digital.nhs.uk                | 443   | /rtec-api-gateway/search   |
 
 ### Production (LIVE) ###
 
@@ -25,4 +33,4 @@ To support production use of the service.
 
 | Host                                        | Port  | Endpoint                          |
 | --------------------------------------------| ----- | --------------------------------- |
-| TBC                                         | 443   | /rtec-api-gateway/v1.0.0/search   |
+| TBC                                         | 443   | /rtec-api-gateway/search   |
