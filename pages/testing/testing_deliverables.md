@@ -8,9 +8,9 @@ summary: "Details of test resources made available to support testing of Prescri
 ---
 ## Requirements Trace ##
 
-Evidence to demonstrate meeting these requirements is approved by NHS Digital Solution Assurance compliance team. A Release Traceability Matrix (RTM) derived from functional requirements is recommended for this.
+Evidence to demonstrate meeting these requirements is approved by NHS Digital Solution Assurance compliance team. A Requirement Traceability Matrix (RTM) derived from functional requirements is recommended for this.
 
-  * [Release Traceability Matrix (XLS)](downloads/Prescription Exemption Checking Client RTM.xlsx)
+  * [Requirement Traceability Matrix (XLS)](downloads/Prescription Exemption Checking Client RTM.xlsx)
 
 ## Test Evidence - Functional Requirements##
 
