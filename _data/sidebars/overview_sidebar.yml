@@ -1,7 +1,13 @@
 entries:
+<<<<<<< HEAD
 - title: Real Time Exemption Checking Service
   product: Real Time Exemption Checking Service API<br/>
   version: v1.0.0
+=======
+- title: Prescription Exemption Checking Service
+  product: Prescription Exemption Checking Service API<br/>
+  version: v1.0.1
+>>>>>>> master
   levels: one
   folders:
 
