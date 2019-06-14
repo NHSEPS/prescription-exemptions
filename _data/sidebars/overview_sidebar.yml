@@ -1,6 +1,6 @@
 entries:
-- title: Prescription Exemption Checking Service
-  product: Prescription Exemption Checking Service API<br/>
+- title: Real Time Exemption Checking Service
+  product: Real Time Exemption Checking Service API<br/>
   version: v1.0.0
   levels: one
   folders:

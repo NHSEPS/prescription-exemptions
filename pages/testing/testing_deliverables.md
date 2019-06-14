@@ -4,15 +4,19 @@ keywords: testing deliverables
 tags: [engagement,testing]
 sidebar: overview_sidebar
 permalink: testing_deliverables.html
-summary: "Details of test resources made available to support testing of Prescription Exemption Checking Service integrations"
+summary: "Details of test resources made available to support testing of Real Time Exemption Checking Service integrations"
 ---
 ## Requirements Trace ##
 
-Evidence to demonstrate meeting these requirements is approved by NHS Digital Solution Assurance compliance team. A Release Traceability Matrix (RTM) derived from functional requirements is recommended for this.
+Evidence to demonstrate meeting these requirements is approved by NHS Digital Solution Assurance compliance team. A Requirement Traceability Matrix (RTM) derived from functional requirements is recommended for this.
+
+  * [Requirement Traceability Matrix (XLS)](downloads/development/Real Time Exemption Checking Service - Client RTM.xlsx)
 
 ## Test Evidence - Functional Requirements##
 
 There are a set of acceptance criteria which should permit automated testing of the integration.  Evidence of successful test shall be provided to demonstrate compliance.
+
+  * [Acceptance criteria](testing_acceptance_criteria.html)
 
 ## Witness Testing ##
 

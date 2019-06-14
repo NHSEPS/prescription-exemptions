@@ -4,7 +4,7 @@ keywords: develop
 tags: [develop]
 sidebar: overview_sidebar
 permalink: integrating_messaging.html
-summary: How to integrate information from the Prescription Exemption Checking Service API with EPS Prescription messaging
+summary: How to integrate information from the Real Time Exemption Checking Service API with EPS Prescription messaging
 ---
 
 Once an exemption has been confirmed by a prescription exemption check this confirmation needs to be reflected in the reimbursement claim message for EPS prescriptions. This is done using an extended version of the  *PrescriptionChargeExemption* vocabulary, which includes values which may be returned by a prescription exemption check. Where the patient wishes to claim a different exemption not confirmed by the prescription exemption checking service, then the appropriate value not confirmed by source must be included in the claim message.
@@ -34,6 +34,7 @@ The following vocabulary must be used in EPS claim messages.
 | `0012`	| gets income based Job Seeker's Allowance (JSA (IB))	 | |
 | `0013`	| is entitled to, or named on a VALID NHS tax credit exemption certificate	 |
 | `0015` | Patient does not need to pay the prescription charge	| This allows the exemption status to be recorded without actually stating the reason for the exemption.|
+| `0016` | gets Universal Credit (and meets eligibility criteria)
 | `9005`	| has a valid maternity exemption certificate - confirmed by source	 | |
 | Any other value | Patient does not need to pay the prescription charge - confirmed by source	| This allows the exemption status to be confirmed without actually stating the reason for the exemption |
 
