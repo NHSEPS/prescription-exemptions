@@ -4,7 +4,7 @@ keywords: testing deliverables
 tags: [engagement,testing]
 sidebar: overview_sidebar
 permalink: testing_deliverables.html
-summary: "Details of test resources made available to support testing of Prescription Exemption Checking Service integrations"
+summary: "Details of test resources made available to support testing of Real Time Exemption Checking Service integrations"
 ---
 ## Requirements Trace ##
 

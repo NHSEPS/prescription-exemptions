@@ -1,11 +1,11 @@
 ---
-title: Introduction to Prescription Exemption Checking Service API.
+title: Introduction to Real Time Exemption Checking Service API.
 keywords: homepage
 tags: [getting_started]
 sidebar: overview_sidebar
 permalink: index.html
 toc: true
-summary: An introduction to the Prescription Exemption Checking Service API.
+summary: An introduction to the Real Time Exemption Checking Service API.
 ---
 
 ## Introduction ##
@@ -18,7 +18,7 @@ NHS Digital has been asked to provide an effective solution to ensure that exemp
 
 ## Benefits ##
 
-Benefits of the Prescription Exemption Checking Service:
+Benefits of the Real Time Exemption Checking Service:
 
 - The NHS as a whole benefits from the reduced cost of prescription fraud due to a decrease in false prescription claims
 - Remove the burden and time taken to manage numerous exemption certificates within the care environment

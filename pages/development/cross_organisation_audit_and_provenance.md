@@ -4,7 +4,7 @@ keywords: spine, integration, audit, provenance
 tags: [integration]
 sidebar: overview_sidebar
 permalink: cross_organisation_audit_and_provenance.html
-summary: "Overview of how audit and provenance data is passed to the Prescription Exemption Checking Service."
+summary: "Overview of how audit and provenance data is passed to the Real Time Exemption Checking Service."
 ---
 
 ## Cross organisation audit and provenance transport ##

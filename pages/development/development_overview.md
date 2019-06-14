@@ -4,7 +4,7 @@ keywords: development guide api
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_overview.html
-summary: "Overview for developers on how to integrate with the Prescription Exemption Checking Service"
+summary: "Overview for developers on how to integrate with the Real Time Exemption Checking Service"
 ---
 
 ## Development Overview ##
