@@ -34,6 +34,7 @@ The following vocabulary must be used in EPS claim messages.
 | `0012`	| gets income based Job Seeker's Allowance (JSA (IB))	 | |
 | `0013`	| is entitled to, or named on a VALID NHS tax credit exemption certificate	 |
 | `0015` | Patient does not need to pay the prescription charge	| This allows the exemption status to be recorded without actually stating the reason for the exemption.|
+| `0016` | gets Universal Credit (and meets eligibility criteria)
 | `9005`	| has a valid maternity exemption certificate - confirmed by source	 | |
 | Any other value | Patient does not need to pay the prescription charge - confirmed by source	| This allows the exemption status to be confirmed without actually stating the reason for the exemption |
 
