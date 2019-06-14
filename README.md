@@ -1,16 +1,14 @@
 <img src="images/logo.png" height=72>
 
-# GP Connect
+# RTEC Integration Specification
 
 This is the source repository for the Prescription Exemption Checking Service integration specification.
 
-The current specification version is held in the master branch, and published to <a href="https://nhseps.github.io/prescription-exemptions/">GitHub pages</a>.
-
-Previous versions of the specification are held in release/* branches (and tagged), and published to the <a href="https://developer.nhs.uk/prescription-exemptions-releases/">NHS Developer Network</a>.
+The current specification version is held in the master branch, and published automatically with <a href="https://nhseps.github.io/prescription-exemptions/">GitHub pages</a>.
 
 ## Building the specification
 
-To build the GP Connect specification locally
+To build the specification locally
 
 - Clone the repository: `git clone https://github.com/nhseps/prescription-exemptions.git`
 - Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/#homebrew)
