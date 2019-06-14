@@ -4,11 +4,18 @@ keywords: development guide api
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_overview.html
-summary: "Overview for developers on how to integrate with the Prescription Exemption Checking Service"
+summary: "Overview for developers on how to integrate with the Real Time Exemption Checking Service"
 ---
 
 ## Development Overview ##
 
+### Functional & Non Functional Requirements ###
+
+Integrating systems must meet the client requirements listed below:
+
+* [Real Time Exemption Checking Service - Client Functional Requirements](downloads/development/Real Time Exemption Checking Service - Client Functional Requirements v1.0.pdf)
+
+* [Real Time Exemption Checking Service - Client Non Functional Requirements](downloads/development/Prescription Exemption Checking Service - Client Non Functional Requirements_v0.1.pdf)
 
 ### Requests ###
 All requests are HTTP POSTs of a json object with the following properties:

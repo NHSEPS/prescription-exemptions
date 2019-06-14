@@ -9,7 +9,7 @@ summary: "Details of what environments are available to support the technical ac
 
 ## Path to Live ##
 
-The prescription exemption checking service utilises the following "Path to Live" environments. As the service is cloud hosted IP addresses may change and so are not provided.
+The Real Time Exemption Checking service utilises the following environments. As the service is cloud hosted IP addresses may change and so are not provided.
 
 ### Spine Integration (INT) / NHSBSA Staging ###
 
