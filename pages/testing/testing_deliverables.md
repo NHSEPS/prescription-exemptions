@@ -10,7 +10,7 @@ summary: "Details of test resources made available to support testing of Real Ti
 
 Evidence to demonstrate meeting these requirements is approved by NHS Digital Solution Assurance compliance team. A Requirement Traceability Matrix (RTM) derived from functional requirements is recommended for this.
 
-  * [Requirement Traceability Matrix (XLS)](downloads/development/Real Time Exemption Checking Service - Client RTM.xlsx)
+  * [Requirement Traceability Matrix (XLS)](downloads/development/Real Time Exemption Checking Service - Client RTM v1.0.xlsx)
 
 ## Test Evidence - Functional Requirements##
 
